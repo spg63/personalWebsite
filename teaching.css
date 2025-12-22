@@ -136,7 +136,43 @@ body {
   margin: 10px 0 18px;
 }
 
-.chartWrap canvas {
+.chartWrap canvas
+.ratingsDetails {
+  margin-top: 8px;
+  border-top: 1px dashed rgba(28, 35, 43, 0.12);
+  padding-top: 10px;
+}
+
+.ratingsDetails summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.ratingsDetails summary::-webkit-details-marker {
+  display: none;
+}
+
+.ratingsDetails summary::before {
+  content: "＋";
+  display: inline-block;
+  margin-right: 8px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.ratingsDetails[open] summary::before {
+  content: "−";
+}
+
+.ratingsDetails table {
+  margin-top: 6px;
+}
+ {
   width: 100%;
   height: 100%;
 }

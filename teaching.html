@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Teaching</title>
+
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="Teaching portfolio and course ratings."/>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="teaching.css">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="pageHeader">
+      <div>
+        <p class="eyebrow">Teaching</p>
+        <h1>Courses, syllabi, and student ratings</h1>
+        <p class="lead">A running record of recent courses, with numeric student reviews.</p>
+      </div>
+      <a class="ghostLink" href="index.html">Back to main page</a>
+    </header>
+
+    <section class="summary">
+      <div>
+        <h2>About the data</h2>
+        <p>Ratings shown below are numeric course and instructor scores pulled from AEFIS reports. Syllabi links point to the most recent version for each course, when available.</p>
+      </div>
+      <div class="summaryCard">
+        <p class="label">Quick stats</p>
+        <h3>10 courses</h3>
+        <p>Across in-person, online, and hybrid formats.</p>
+      </div>
+    </section>
+
+    <section class="courseGrid">
+      <article class="courseCard">
+        <div class="courseHeader">
+          <div>
+            <h2>CS380</h2>
+            <p>Latest syllabus: <a href="syllabi/CS380-latest.pdf">Download PDF</a></p>
+          </div>
+          <div class="tag">Undergraduate</div>
+        </div>
+        <div class="chartWrap">
+          <canvas class="ratingChart" data-labels='["W23","W24","W25"]' data-course='[4.10,4.37,4.28]' data-prof='[4.50,4.52,4.41]'></canvas>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Course rating</th>
+              <th>Professor rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Winter 2023 (in-person)</td>
+              <td>4.10</td>
+              <td>4.50</td>
+            </tr>
+            <tr>
+              <td>Winter 2024 (in-person)</td>
+              <td>4.37</td>
+              <td>4.52</td>
+            </tr>
+            <tr>
+              <td>Winter 2025 (in-person)</td>
+              <td>4.28</td>
+              <td>4.41</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="courseCard">
+        <div class="courseHeader">
+          <div>
+            <h2>CS432</h2>
+            <p>Latest syllabus: <a href="syllabi/CS432-latest.pdf">Download PDF</a></p>
+          </div>
+          <div class="tag">Undergraduate</div>
+        </div>
+        <div class="chartWrap">
+          <canvas class="ratingChart" data-labels='["S24","S25"]' data-course='[4.38,4.66]' data-prof='[4.62,4.69]'></canvas>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Course rating</th>
+              <th>Professor rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Summer 2024 (in-person)</td>
+              <td>4.38</td>
+              <td>4.62</td>
+            </tr>
+            <tr>
+              <td>Summer 2025 (in-person)</td>
+              <td>4.66</td>
+              <td>4.69</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="courseCard">
+        <div class="courseHeader">
+          <div>
+            <h2>CS472</h2>
+            <p>Latest syllabus: <a href="syllabi/CS472-latest.pdf">Download PDF</a></p>
+          </div>
+          <div class="tag">Undergraduate</div>
+        </div>
+        <div class="chartWrap">
+          <canvas class="ratingChart" data-labels='["S23","W25","S25"]' data-course='[4.64,4.47,4.72]' data-prof='[4.77,4.59,4.76]'></canvas>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Course rating</th>
+              <th>Professor rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Summer 2023 (in-person)</td>
+              <td>4.64</td>
+              <td>4.77</td>
+            </tr>
+            <tr>
+              <td>Winter 2025 (in-person)</td>
+              <td>4.47</td>
+              <td>4.59</td>
+            </tr>
+            <tr>
+              <td>Summer 2025 (in-person)</td>
+              <td>4.72</td>
+              <td>4.76</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="courseCard">
+        <div class="courseHeader">
+          <div>
+            <h2>CS500</h2>
+            <p>Latest syllabus: <a href="syllabi/CS500-latest.pdf">Download PDF</a></p>
+          </div>
+          <div class="tag">Graduate</div>
+        </div>
+        <div class="chartWrap">
+          <canvas class="ratingChart" data-labels='["S24"]' data-course='[4.83]' data-prof='[4.83]'></canvas>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Course rating</th>
+              <th>Professor rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Summer 2024 (online)</td>
+              <td>4.83</td>
+              <td>4.83</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="courseCard">
+        <div class="courseHeader">
+          <div>
+            <h2>CS510</h2>
+            <p>Latest syllabus: <a href="syllabi/CS510-latest.pdf">Download PDF</a></p>
+          </div>
+          <div class="tag">Graduate</div>
+        </div>
+        <p class="chartLabel">In-person sections</p>
+        <div class="chartWrap">
+          <canvas class="ratingChart" data-labels='["W24","Sp24","W25","F25"]' data-course='[4.67,4.67,4.90,4.77]' data-prof='[4.67,4.56,5.00,4.81]'></canvas>
+        </div>
+        <p class="chartLabel">Online sections</p>
+        <div class="chartWrap">
+          <canvas class="ratingChart" data-labels='["W24","Sp24","W25","F25"]' data-course='[3.90,4.47,4.50,4.36]' data-prof='[4.30,4.29,4.50,4.44]'></canvas>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Course rating</th>
+              <th>Professor rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Winter 2024 (in-person)</td>
+              <td>4.67</td>
+              <td>4.67</td>
+            </tr>
+            <tr>
+              <td>Winter 2024 (online)</td>
+              <td>3.90</td>
+              <td>4.30</td>
+            </tr>
+            <tr>
+              <td>Spring 2024 (in-person)</td>
+              <td>4.67</td>
+              <td>4.56</td>
+            </tr>
+            <tr>
+              <td>Spring 2024 (online)</td>
+              <td>4.47</td>
+              <td>4.29</td>
+            </tr>
+            <tr>
+              <td>Winter 2025 (in-person)</td>
+              <td>4.90</td>
+              <td>5.00</td>
+            </tr>
+            <tr>
+              <td>Winter 2025 (online)</td>
+              <td>4.50</td>
+              <td>4.50</td>
+            </tr>
+            <tr>
+              <td>Fall 2025 (in-person)</td>
+              <td>4.77</td>
+              <td>4.81</td>
+            </tr>
+            <tr>
+              <td>Fall 2025 (online)</td>
+              <td>4.36</td>
+              <td>4.44</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="courseCard">
+        <div class="courseHeader">
+          <div>
+            <h2>CS645</h2>
+            <p>Latest syllabus: Not publicly available</p>
+          </div>
+          <div class="tag">Graduate</div>
+        </div>
+        <div class="chartWrap">
+          <canvas class="ratingChart" data-labels='["S23"]' data-course='[3.86]' data-prof='[4.10]'></canvas>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Course rating</th>
+              <th>Professor rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Summer 2023 (combined)</td>
+              <td>3.86</td>
+              <td>4.10</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="courseCard">
+        <div class="courseHeader">
+          <div>
+            <h2>SE181/201</h2>
+            <p>Latest syllabus: <a href="syllabi/SE181-201-latest.pdf">Download PDF</a></p>
+          </div>
+          <div class="tag">Undergraduate</div>
+        </div>
+        <div class="chartWrap">
+          <canvas class="ratingChart" data-labels='["F22","Sp23-001","Sp23-002","W24","Sp24","F24-004","F24-005"]' data-course='[2.74,3.52,3.77,3.73,4.10,4.00,4.22]' data-prof='[3.97,3.85,3.87,4.10,4.55,4.10,4.55]'></canvas>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Course rating</th>
+              <th>Professor rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fall 2022 (in-person)</td>
+              <td>2.74</td>
+              <td>3.97</td>
+            </tr>
+            <tr>
+              <td>Spring 2023 001 (in-person)</td>
+              <td>3.52</td>
+              <td>3.85</td>
+            </tr>
+            <tr>
+              <td>Spring 2023 002 (in-person)</td>
+              <td>3.77</td>
+              <td>3.87</td>
+            </tr>
+            <tr>
+              <td>Winter 2024 (in-person)</td>
+              <td>3.73</td>
+              <td>4.10</td>
+            </tr>
+            <tr>
+              <td>Spring 2024 (in-person)</td>
+              <td>4.10</td>
+              <td>4.55</td>
+            </tr>
+            <tr>
+              <td>Fall 2024-004 (in-person)</td>
+              <td>4.00</td>
+              <td>4.10</td>
+            </tr>
+            <tr>
+              <td>Fall 2024-005 (in-person)</td>
+              <td>4.22</td>
+              <td>4.55</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="courseCard">
+        <div class="courseHeader">
+          <div>
+            <h2>SE310</h2>
+            <p>Latest syllabus: Not publicly available</p>
+          </div>
+          <div class="tag">Undergraduate</div>
+        </div>
+        <p class="chartLabel">In-person sections</p>
+        <div class="chartWrap">
+          <canvas class="ratingChart" data-labels='["F22-001","F22-003","Sp23","Sp24","F24-002","F24-003"]' data-course='[3.73,3.10,3.63,3.67,3.89,4.03]' data-prof='[4.40,4.20,4.10,4.42,4.31,4.37]'></canvas>
+        </div>
+        <p class="chartLabel">Online sections</p>
+        <div class="chartWrap">
+          <canvas class="ratingChart" data-labels='["S22-A","S23-S","S24-S","S25-S"]' data-course='[3.20,4.33,4.43,3.88]' data-prof='[3.75,4.83,4.71,4.08]'></canvas>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Course rating</th>
+              <th>Professor rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Summer 2022 (online, async)</td>
+              <td>3.20</td>
+              <td>3.75</td>
+            </tr>
+            <tr>
+              <td>Fall 2022 001 (in-person)</td>
+              <td>3.73</td>
+              <td>4.40</td>
+            </tr>
+            <tr>
+              <td>Fall 2022 003 (in-person)</td>
+              <td>3.10</td>
+              <td>4.20</td>
+            </tr>
+            <tr>
+              <td>Spring 2023 (in-person)</td>
+              <td>3.63</td>
+              <td>4.10</td>
+            </tr>
+            <tr>
+              <td>Summer 2023 (online, sync)</td>
+              <td>4.33</td>
+              <td>4.83</td>
+            </tr>
+            <tr>
+              <td>Spring 2024 (in-person)</td>
+              <td>3.67</td>
+              <td>4.42</td>
+            </tr>
+            <tr>
+              <td>Summer 2024 (online, sync)</td>
+              <td>4.43</td>
+              <td>4.71</td>
+            </tr>
+            <tr>
+              <td>Fall 2024-002 (in-person)</td>
+              <td>3.89</td>
+              <td>4.31</td>
+            </tr>
+            <tr>
+              <td>Fall 2024-003 (in-person)</td>
+              <td>4.03</td>
+              <td>4.37</td>
+            </tr>
+            <tr>
+              <td>Summer 2025 (online, sync)</td>
+              <td>3.88</td>
+              <td>4.08</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="courseCard">
+        <div class="courseHeader">
+          <div>
+            <h2>CS610</h2>
+            <p>Latest syllabus: <a href="syllabi/CS610-latest.pdf">Download PDF</a></p>
+          </div>
+          <div class="tag">Graduate</div>
+        </div>
+        <div class="chartWrap">
+          <canvas class="ratingChart" data-labels='["Most recent"]' data-course='[4.20]' data-prof='[4.63]'></canvas>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Course rating</th>
+              <th>Professor rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Most recent</td>
+              <td>4.20</td>
+              <td>4.63</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+  </div>
+
+<script>
+  (function () {
+    const charts = document.querySelectorAll('.ratingChart');
+    if (!charts.length || typeof Chart === 'undefined') {
+      return;
+    }
+
+    charts.forEach((canvas) => {
+      const labels = JSON.parse(canvas.dataset.labels || '[]');
+      const course = JSON.parse(canvas.dataset.course || '[]');
+      const prof = JSON.parse(canvas.dataset.prof || '[]');
+
+      new Chart(canvas, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [
+            {
+              label: 'Course',
+              data: course,
+              borderColor: '#0f766e',
+              backgroundColor: 'rgba(15, 118, 110, 0.12)',
+              borderWidth: 2,
+              tension: 0.35,
+              pointRadius: 3,
+              pointBackgroundColor: '#0f766e',
+            },
+            {
+              label: 'Professor',
+              data: prof,
+              borderColor: '#b45309',
+              backgroundColor: 'rgba(180, 83, 9, 0.12)',
+              borderWidth: 2,
+              tension: 0.35,
+              pointRadius: 3,
+              pointBackgroundColor: '#b45309',
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                boxWidth: 10,
+                color: '#5b6473',
+                font: { size: 11, family: 'Work Sans' },
+              },
+            },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}`,
+              },
+            },
+          },
+          scales: {
+            y: {
+              min: 2.5,
+              max: 5.0,
+              ticks: {
+                color: '#5b6473',
+                font: { size: 11, family: 'Work Sans' },
+              },
+              grid: {
+                color: 'rgba(28, 35, 43, 0.08)',
+              },
+            },
+            x: {
+              ticks: {
+                color: '#5b6473',
+                font: { size: 11, family: 'Work Sans' },
+              },
+              grid: {
+                display: false,
+              },
+            },
+          },
+        },
+      });
+    });
+  })();
+</script>
+</body>
+</html>

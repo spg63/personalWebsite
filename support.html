@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Support Desk</title>
+
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="Support desk portal."/>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="support.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <header class="pageHeader">
+      <div>
+        <p class="eyebrow">Support Desk</p>
+        <h1>Submit a request</h1>
+        <p class="lead">We read every message. We just do it dramatically.</p>
+      </div>
+      <a class="ghostLink" href="index.html">Back to main page</a>
+    </header>
+
+    <main class="supportGrid">
+      <section class="supportCard">
+        <div class="cardHeader">
+          <h2>Request details</h2>
+          <p>Tell us the chaos. We will file it appropriately.</p>
+        </div>
+
+        <form id="support-form" class="supportForm" autocomplete="off">
+          <label for="support-name">Name</label>
+          <input id="support-name" name="name" type="text" required placeholder="Your name" maxlength="60">
+
+          <label for="support-email">Email</label>
+          <input id="support-email" name="email" type="email" required placeholder="you@example.com" maxlength="120">
+
+          <label for="support-request">Request</label>
+          <textarea id="support-request" name="request" rows="4" required placeholder="Describe the issue" maxlength="500"></textarea>
+
+          <div class="actions">
+            <button id="support-submit" type="submit">Submit request</button>
+            <p id="support-status" class="supportStatus" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
+      <aside class="supportAside">
+        <div class="supportCard accent">
+          <h3>What happens next?</h3>
+          <ol>
+            <li>We nod solemnly.</li>
+            <li>We write it in the ledger.</li>
+            <li>We pretend to escalate.</li>
+          </ol>
+          <p class="monoTag">Response time: 5 seconds*</p>
+          <p class="finePrint">*give or take a dramatic pause.</p>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+<script>
+  (function () {
+    const supportForm = document.getElementById('support-form');
+    const supportStatus = document.getElementById('support-status');
+    const supportButton = document.getElementById('support-submit');
+
+    const supportKey = 'fakeSupportRequests';
+
+    const snarkyReplies = [
+      'Your request has been taken into consideration. Emotionally.',
+      'Thanks for the report. Our specialists are laughing respectfully.',
+      'Ticket received. The issue is now in a better place.',
+      'We have filed this under "bold ideas."',
+      'Your request is in the queue behind the snack run.',
+      'Request acknowledged. Expectations adjusted.',
+    ];
+
+    const postToServer = async (payload) => {
+      const response = await fetch('support.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        throw new Error('Server error');
+      }
+      return response.json();
+    };
+
+    const getStored = (key) => {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : [];
+      } catch (err) {
+        return [];
+      }
+    };
+
+    const setStored = (key, value) => {
+      localStorage.setItem(key, JSON.stringify(value));
+    };
+
+    supportForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.getElementById('support-name').value.trim();
+      const email = document.getElementById('support-email').value.trim();
+      const request = document.getElementById('support-request').value.trim();
+
+      if (!name || !email || !request) {
+        supportStatus.textContent = 'Please fill in every field.';
+        return;
+      }
+
+      const items = getStored(supportKey);
+      items.push({
+        name,
+        email,
+        request,
+        createdAt: new Date().toISOString(),
+      });
+      setStored(supportKey, items);
+
+      supportStatus.textContent = 'Processing request...';
+      supportButton.disabled = true;
+
+      postToServer({
+        type: 'support',
+        name,
+        email,
+        request,
+      }).catch(() => {
+        supportStatus.textContent = 'Processing request... (server side is moody)';
+      });
+
+      setTimeout(() => {
+        const reply = snarkyReplies[Math.floor(Math.random() * snarkyReplies.length)];
+        supportStatus.textContent = 'Request logged and forwarded to our "specialists."';
+        supportButton.disabled = false;
+        supportForm.reset();
+        alert(reply);
+      }, 5000);
+    });
+  })();
+</script>
+</body>
+</html>

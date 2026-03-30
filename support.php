@@ -1,5 +1,8 @@
 <?php
 header('Content-Type: application/json; charset=UTF-8');
+header('X-Content-Type-Options: nosniff');
+header('X-Frame-Options: DENY');
+header("Content-Security-Policy: default-src 'none'");
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -17,6 +20,12 @@ if (!empty($_POST)) {
     if (is_array($decoded)) {
         $data = $decoded;
     }
+}
+
+if (!empty($data['website'])) {
+    http_response_code(400);
+    echo json_encode(['ok' => false, 'error' => 'Bad request']);
+    exit;
 }
 
 $type = isset($data['type']) ? trim($data['type']) : '';
